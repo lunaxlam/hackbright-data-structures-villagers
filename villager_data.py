@@ -98,7 +98,7 @@ def all_names_by_hobby(filename):
 
     # Group villagers by hobby
     for i, hobby in enumerate(villager_hobbies):
-        hobby_group = []
+        hobby_group = [villager_hobbies[i]]
         for villager in all_villagers:
             if villager[3] == villager_hobbies[i]:
                 hobby_group.append(villager[0])
