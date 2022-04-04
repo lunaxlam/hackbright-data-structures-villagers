@@ -25,8 +25,10 @@ def villagers_info(filename):
     
     return all_villagers
 
+
 def all_species(filename):
-    """Return a set of unique species in the given file.
+    """
+    Return a set of unique species in the given file.
 
     Arguments:
         - filename (str): the path to a data file
@@ -34,7 +36,7 @@ def all_species(filename):
     Return:
         - set[str]: a set of strings
     """
-
+    
     species = set()
 
     all_villagers = villagers_info(filename)
@@ -46,7 +48,8 @@ def all_species(filename):
 
 
 def get_villagers_by_species(filename, search_string="All"):
-    """Return a list of villagers' names by species.
+    """
+    Return a list of villagers' names by species.
 
     Arguments:
         - filename (str): the path to a data file
@@ -70,7 +73,8 @@ def get_villagers_by_species(filename, search_string="All"):
 
 
 def all_names_by_hobby(filename):
-    """Return a list of lists containing villagers' names, grouped by hobby.
+    """
+    Return a list of lists containing villagers' names, grouped by hobby.
 
     Arguments:
         - filename (str): the path to a data file
@@ -82,6 +86,9 @@ def all_names_by_hobby(filename):
     # Create a list to store all hobbies
     villager_hobbies = []
 
+    # Create a list to store villagers by hobby
+    villagers_by_hobby = []
+
     all_villagers = villagers_info(filename)
 
     # Identify all unique hobbies and store in all_hobbies
@@ -91,14 +98,15 @@ def all_names_by_hobby(filename):
 
     # Group villagers by hobby
     for i, hobby in enumerate(villager_hobbies):
-        hobby_group = [villager_hobbies[i]]
+        hobby_group = []
         for villager in all_villagers:
             if villager[3] == villager_hobbies[i]:
                 hobby_group.append(villager[0])
-        villager_hobbies.append(hobby_group)
+        villagers_by_hobby.append(hobby_group)
 
-    return villager_hobbies
+    return villagers_by_hobby
 
+print(all_names_by_hobby(input_file))
 
 def all_data(filename):
     """Return all the data in a file.
@@ -172,8 +180,6 @@ def find_likeminded_villagers(filename, villager_name):
             same_personality.add(villager[0])
 
     return same_personality
-
-print(find_likeminded_villagers(input_file, "Cyrano"))
 
 
 # Close the file
