@@ -5,10 +5,11 @@ input_file = open("villagers.csv")
 
 def villagers_info(filename):
     """
-    Returns a list of all the villagers information.
+    Return a list of all the villagers information.
 
     :param filename: input file as an opened file object data type
-    :return: villagers information as a list
+
+    Returns villagers information as a list.
     """
     
     # Moves pointer to first element of the file
@@ -106,10 +107,10 @@ def all_names_by_hobby(filename):
 
     return villagers_by_hobby
 
-print(all_names_by_hobby(input_file))
 
 def all_data(filename):
-    """Return all the data in a file.
+    """
+    Return all the data in a file.
 
     Each line in the file is a tuple of (name, species, personality, hobby,
     saying).
@@ -133,7 +134,8 @@ def all_data(filename):
 
 
 def find_motto(filename, villager_name):
-    """Return the villager's motto.
+    """
+    Return the villager's motto.
 
     Return None if you're not able to find a villager with the
     given name.
@@ -154,7 +156,8 @@ def find_motto(filename, villager_name):
 
 
 def find_likeminded_villagers(filename, villager_name):
-    """Return a set of villagers with the same personality as the given villager.
+    """
+    Return a set of villagers with the same personality as the given villager.
 
     Arguments:
         - filename (str): the path to a data file
